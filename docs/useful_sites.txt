@@ -1,0 +1,13 @@
+install/update nodejs - https://nodejs.org/en/download/
+
+create react app with typescript: https://create-react-app.dev/docs/adding-typescript/
+
+adding project to github: https://docs.github.com/en/free-pro-team@latest/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
+
+babel: https://babeljs.io/
+
+codepen: https://codepen.io/pen
+
+Faker.js: https://github.com/marak/Faker.js/
+
+cdnjs: https://cdnjs.com/
