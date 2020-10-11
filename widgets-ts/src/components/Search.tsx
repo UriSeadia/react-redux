@@ -5,48 +5,46 @@ import { TWikiDataQuerySearch } from '../models/types';
 const labels = {
   go: 'Go',
   input_text: 'Enter search term'
-}
+};
 
 const DEFAULT_TERM = 'programming';
 
 const Search: FC = () => {
 
   const [term, setTerm] = useState<string>(DEFAULT_TERM);
+  const [debouncedTerm, setDebouncedTerm] = useState<string>(DEFAULT_TERM);
   const [result, setResult] = useState<TWikiDataQuerySearch[]>([]);
 
-  console.log('I run with every render');
+  // console.log('I run with every render!');
 
+  // Runs only at initial render
   useEffect(() => {
-    console.log('I run only at initial render');
   }, []);
 
+  // Runs at initial render AND after every render
   useEffect(() => {
-    console.log('I run at initial render AND after every render');
   });
 
+  // Runs at initial render AND after every render if "term" has changed
   useEffect(() => {
-    console.log('I run at initial render AND after every render if the term has changed');
+    const timeoutId = setTimeout(() => {
+      setDebouncedTerm(term);
+    }, 500);
 
+    // Cleanup - Runs after every render if "term" has changed, but not at initial render
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [term]);
+  
+  // Runs at initial render AND after every render if "debouncedTerm" has changed
+  useEffect(() => {
     const search = async (): Promise<void> => {
-      const response = await getWiki(term);
+      const response = await getWiki(debouncedTerm);
       setResult(response || []);
     };
-
-    if (term && !result.length) {     
-      search();
-    } else {
-      const timeoutId = setTimeout(() => {
-        if (term) {
-          search();
-        }
-      }, 5000);
-
-      return () => {
-        console.log('Cleanup - I run after every render if the term has changed, but not at initial render');
-        clearTimeout(timeoutId);
-      };
-    }
-  }, [term, result.length]);
+    search();
+  }, [debouncedTerm])
 
   const renderedResults: JSX.Element[] = result.map(result => {
     return (
