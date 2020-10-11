@@ -1,12 +1,14 @@
 import React, { FC } from 'react';
 import './App.css';
-import Accordion from './components/Accordion';
-import { staticItems } from './data/staticData';
+// import Accordion from './components/Accordion';
+import Search from './components/Search';
+// import { staticItems } from './data/staticData';
 
 const App: FC = () => {
   return (
     <div>
-      <Accordion items={staticItems} />
+      {/* <Accordion items={staticItems} /> */}
+      <Search />
     </div>
   );
 }

@@ -40,7 +40,7 @@ const Accordion: FC<IAccordion> = ({ items }) => {
     <div className="ui styled accordion">
       {renderedItems}
     </div>
-  )
+  );
 };
 
 export default Accordion;
