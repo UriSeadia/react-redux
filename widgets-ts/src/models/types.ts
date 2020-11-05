@@ -30,3 +30,14 @@ export type TWikiDataQuerySearch = {
   title: string;
   wordcount: number;
 };
+
+export type TDropdownOption = {
+  label: string;
+  value: string;
+};
+
+export type TDropdownProps = {
+  selected: TDropdownOption;
+  onSelectedChange: (option: TDropdownOption) => void;
+  options: TDropdownOption[];
+};

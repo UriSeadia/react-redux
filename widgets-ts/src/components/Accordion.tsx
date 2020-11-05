@@ -17,7 +17,7 @@ const Accordion: FC<IAccordion> = ({ items }) => {
     setActiveIndex(index);
   };
 
-  const renderedItems = items.map((item, index) => {
+  const renderedItems: JSX.Element[] = items.map((item, index) => {
     const active = index === activeIndex ? 'active' : '';
 
     return (

@@ -12,3 +12,18 @@ export const staticItems = [
     content: 'You use React bt creating components'
   }
 ];
+
+export const dropdownOptions = [
+  {
+    label: 'Red',
+    value: 'red'
+  },
+  {
+    label: 'Green',
+    value: 'green'
+  },
+  {
+    label: 'Blue',
+    value: 'blue'
+  }
+];
