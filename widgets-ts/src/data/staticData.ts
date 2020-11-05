@@ -27,3 +27,22 @@ export const dropdownOptions = [
     value: 'blue'
   }
 ];
+
+export const languageOptions = [
+  {
+    label: 'Africans',
+    value: 'af'
+  },
+  {
+    label: 'Arabic',
+    value: 'ar'
+  },
+  {
+    label: 'Hebrew',
+    value: 'he'
+  },
+  {
+    label: 'Hindi',
+    value: 'hi'
+  }
+];

@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import { TDropdownProps } from '../models/types';
 
-const Dropdown: FC<TDropdownProps> = ({ selected, onSelectedChange, options }) => {
+const Dropdown: FC<TDropdownProps> = ({ label, selected, onSelectedChange, options }) => {
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -42,7 +42,7 @@ const Dropdown: FC<TDropdownProps> = ({ selected, onSelectedChange, options }) =
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="label">Select a color</label>
+        <label className="label">{label}</label>
         <div
           className={`ui selection dropdown ${open ? 'visible active' : ''}`}
           onClick={() => setOpen(!open)}

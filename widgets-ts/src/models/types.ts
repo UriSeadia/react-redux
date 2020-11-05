@@ -31,13 +31,28 @@ export type TWikiDataQuerySearch = {
   wordcount: number;
 };
 
+export type TGoogleTranslateResponseData = {
+  data: {
+    translations: {
+      detectedSourceLanguage: string;
+      translatedText: string;
+    }[];
+  };
+};
+
 export type TDropdownOption = {
   label: string;
   value: string;
 };
 
 export type TDropdownProps = {
+  label: string;
   selected: TDropdownOption;
   onSelectedChange: (option: TDropdownOption) => void;
   options: TDropdownOption[];
+};
+
+export type TConvertProps = {
+  language: string;
+  text: string;
 };
