@@ -1,7 +1,7 @@
 import React, { useState, FC } from 'react';
 
 type TSearchBarProps = {
-  onFormSubmit: (term: string) => any;
+  onFormSubmit: (term: string) => void;
 };
 
 const SearchBar: FC<TSearchBarProps> = ({ onFormSubmit }) => {

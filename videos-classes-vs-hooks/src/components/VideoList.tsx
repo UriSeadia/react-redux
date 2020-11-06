@@ -1,7 +1,13 @@
 import React from 'react';
 import VideoItem from './VideoItem';
+import { TYoutubeItem } from '../models/types';
 
-const VideoList = ({ videos, onVideoSelect }: { videos: any[], onVideoSelect: any; }) => {
+type TVideoListProps = {
+  videos: TYoutubeItem[],
+  onVideoSelect: React.Dispatch<React.SetStateAction<TYoutubeItem | null>>;
+};
+
+const VideoList: React.FC<TVideoListProps> = ({ videos, onVideoSelect }) => {
   const renderedList = videos.map((video) => {
     return (
       <VideoItem

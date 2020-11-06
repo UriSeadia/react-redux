@@ -1,6 +1,7 @@
 import React from 'react';
+import { TYoutubeItem } from '../models/types';
 
-const VideoDetail = ({ video }: { video: any; }) => {
+const VideoDetail: React.FC<{ video: TYoutubeItem | null; }> = ({ video }) => {
   if (!video) {
     return <div>Loading...</div>;
   }

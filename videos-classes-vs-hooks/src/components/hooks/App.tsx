@@ -3,16 +3,17 @@ import SearchBar from './SearchBar';
 import youtube from '../../api/youtube.api';
 import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';
+import { TYoutubeItem } from '../../models/types';
 
 const App: FC = () => {
-  const [videos, setVideos] = useState<any[]>([]);
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [videos, setVideos] = useState<TYoutubeItem[]>([]);
+  const [selectedVideo, setSelectedVideo] = useState<TYoutubeItem | null>(null);
 
   useEffect(() => {
     onTermSubmit('lionel messi');
   }, []);
 
-  const onTermSubmit = async (term: string) => {
+  const onTermSubmit = async (term: string): Promise<void> => {
     const response = await youtube.get('/search', {
       params: {
         q: term

@@ -1,7 +1,7 @@
 import React from 'react';
 
 type TSearchBarProps = {
-  onFormSubmit: (term: string) => any;
+  onFormSubmit: (term: string) => void;
 };
 
 export class SearchBar extends React.Component<TSearchBarProps> {

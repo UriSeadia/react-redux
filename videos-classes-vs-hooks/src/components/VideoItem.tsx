@@ -1,7 +1,13 @@
 import React from 'react';
+import { TYoutubeItem } from '../models/types';
 import '../style/VideoItem.css';
 
-const VideoItem = ({ video, onVideoSelect }: { video: any, onVideoSelect: any; }) => {
+type TVideoItemProps = {
+  video: TYoutubeItem,
+  onVideoSelect: React.Dispatch<React.SetStateAction<TYoutubeItem | null>>;
+};
+
+const VideoItem: React.FC<TVideoItemProps> = ({ video, onVideoSelect }) => {
   return (
     <div
       onClick={() => onVideoSelect(video)}
