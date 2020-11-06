@@ -1,7 +1,11 @@
+// For using classes: import App from './components/classes/App';
+// For using hooks: import App from './components/hooks/App';
+// For using custom hook: import App from './hooks/App';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/hooks/App';
+import App from './hooks/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
